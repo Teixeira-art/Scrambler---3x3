@@ -1,9 +1,14 @@
 # GERADOR DE SCRAMBLE 3X3 RUBIK'S CUBE
 
 import random
+import time
 
 movimentos = ["R", "R'", "R2","L", "L'", "L2","U", "U'", "U2","B", "B'", "B2","F", "F'", "F2","D", "D'", "D2"]
 eixo = {"R": "x", "L": "x","U": "y", "D": "y","F": "z", "B": "z"}
+
+red = "\033[91m"
+green = "\033[92m"
+reset = "\033[0m"
 
 scramble = []
 
@@ -33,3 +38,11 @@ for i in range(20):
     scramble.append(mov_escolhido)
 
 print(' '.join(scramble))
+
+input(f"\nAperte {green}ENTER{reset} para começar o timer:")
+start_time = time.time()
+    
+input(f"Aperte {red}ENTER{reset} para encerrar o timer!")
+elapsed_time = time.time() - start_time
+    
+print("{:.3f} s".format(elapsed_time))
